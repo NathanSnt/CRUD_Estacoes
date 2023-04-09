@@ -30,28 +30,28 @@ namespace CadastrarEstacoes
         private void InitializeComponent()
         {
             this.gpbInfoEstacao = new System.Windows.Forms.GroupBox();
-            this.lblCampoCodigo = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblCampoNome = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblCampoLocalizacao = new System.Windows.Forms.Label();
-            this.lblLocalizacao = new System.Windows.Forms.Label();
-            this.lblSelecionar = new System.Windows.Forms.Label();
             this.cbbEstacao = new System.Windows.Forms.ComboBox();
+            this.lblSelecionar = new System.Windows.Forms.Label();
+            this.lblLocalizacao = new System.Windows.Forms.Label();
+            this.lblCampoLocalizacao = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCampoNome = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblCampoCodigo = new System.Windows.Forms.Label();
             this.dgvCaracteristicas = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_estacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbCaracteristica = new System.Windows.Forms.ComboBox();
             this.cbbEstadoOperacional = new System.Windows.Forms.ComboBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAdcionar = new System.Windows.Forms.Button();
             this.gpbCaracteristicas = new System.Windows.Forms.GroupBox();
-            this.lblCaracteristicas = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.lblCaracteristicas = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnRemoveTodos = new System.Windows.Forms.Button();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_estacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.gpbInfoEstacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaracteristicas)).BeginInit();
@@ -76,58 +76,15 @@ namespace CadastrarEstacoes
             this.gpbInfoEstacao.TabStop = false;
             this.gpbInfoEstacao.Text = "Informações sobre a estação";
             // 
-            // lblCampoCodigo
+            // cbbEstacao
             // 
-            this.lblCampoCodigo.AutoSize = true;
-            this.lblCampoCodigo.Location = new System.Drawing.Point(497, 36);
-            this.lblCampoCodigo.Name = "lblCampoCodigo";
-            this.lblCampoCodigo.Size = new System.Drawing.Size(70, 20);
-            this.lblCampoCodigo.TabIndex = 0;
-            this.lblCampoCodigo.Text = "Código:";
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(573, 36);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(0, 16);
-            this.lblCodigo.TabIndex = 1;
-            // 
-            // lblCampoNome
-            // 
-            this.lblCampoNome.AutoSize = true;
-            this.lblCampoNome.Location = new System.Drawing.Point(6, 71);
-            this.lblCampoNome.Name = "lblCampoNome";
-            this.lblCampoNome.Size = new System.Drawing.Size(60, 20);
-            this.lblCampoNome.TabIndex = 2;
-            this.lblCampoNome.Text = "Nome:";
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(72, 71);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(0, 16);
-            this.lblNome.TabIndex = 3;
-            // 
-            // lblCampoLocalizacao
-            // 
-            this.lblCampoLocalizacao.AutoSize = true;
-            this.lblCampoLocalizacao.Location = new System.Drawing.Point(6, 105);
-            this.lblCampoLocalizacao.Name = "lblCampoLocalizacao";
-            this.lblCampoLocalizacao.Size = new System.Drawing.Size(109, 20);
-            this.lblCampoLocalizacao.TabIndex = 4;
-            this.lblCampoLocalizacao.Text = "Localização:";
-            // 
-            // lblLocalizacao
-            // 
-            this.lblLocalizacao.AutoEllipsis = true;
-            this.lblLocalizacao.AutoSize = true;
-            this.lblLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalizacao.Location = new System.Drawing.Point(121, 105);
-            this.lblLocalizacao.Name = "lblLocalizacao";
-            this.lblLocalizacao.Size = new System.Drawing.Size(0, 14);
-            this.lblLocalizacao.TabIndex = 5;
+            this.cbbEstacao.FormattingEnabled = true;
+            this.cbbEstacao.Location = new System.Drawing.Point(213, 33);
+            this.cbbEstacao.Name = "cbbEstacao";
+            this.cbbEstacao.Size = new System.Drawing.Size(230, 28);
+            this.cbbEstacao.TabIndex = 7;
+            this.cbbEstacao.Text = "Selecione";
+            this.cbbEstacao.SelectedValueChanged += new System.EventHandler(this.cbbEstacao_SelectedValueChanged);
             // 
             // lblSelecionar
             // 
@@ -138,15 +95,58 @@ namespace CadastrarEstacoes
             this.lblSelecionar.TabIndex = 6;
             this.lblSelecionar.Text = "Selecione uma estação:";
             // 
-            // cbbEstacao
+            // lblLocalizacao
             // 
-            this.cbbEstacao.FormattingEnabled = true;
-            this.cbbEstacao.Location = new System.Drawing.Point(213, 33);
-            this.cbbEstacao.Name = "cbbEstacao";
-            this.cbbEstacao.Size = new System.Drawing.Size(230, 28);
-            this.cbbEstacao.TabIndex = 7;
-            this.cbbEstacao.Text = "Selecione";
-            this.cbbEstacao.SelectedValueChanged += new System.EventHandler(this.cbbEstacao_SelectedValueChanged);
+            this.lblLocalizacao.AutoEllipsis = true;
+            this.lblLocalizacao.AutoSize = true;
+            this.lblLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizacao.Location = new System.Drawing.Point(121, 105);
+            this.lblLocalizacao.Name = "lblLocalizacao";
+            this.lblLocalizacao.Size = new System.Drawing.Size(0, 18);
+            this.lblLocalizacao.TabIndex = 5;
+            // 
+            // lblCampoLocalizacao
+            // 
+            this.lblCampoLocalizacao.AutoSize = true;
+            this.lblCampoLocalizacao.Location = new System.Drawing.Point(6, 105);
+            this.lblCampoLocalizacao.Name = "lblCampoLocalizacao";
+            this.lblCampoLocalizacao.Size = new System.Drawing.Size(109, 20);
+            this.lblCampoLocalizacao.TabIndex = 4;
+            this.lblCampoLocalizacao.Text = "Localização:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(72, 71);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(0, 20);
+            this.lblNome.TabIndex = 3;
+            // 
+            // lblCampoNome
+            // 
+            this.lblCampoNome.AutoSize = true;
+            this.lblCampoNome.Location = new System.Drawing.Point(6, 71);
+            this.lblCampoNome.Name = "lblCampoNome";
+            this.lblCampoNome.Size = new System.Drawing.Size(60, 20);
+            this.lblCampoNome.TabIndex = 2;
+            this.lblCampoNome.Text = "Nome:";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(573, 36);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(0, 20);
+            this.lblCodigo.TabIndex = 1;
+            // 
+            // lblCampoCodigo
+            // 
+            this.lblCampoCodigo.AutoSize = true;
+            this.lblCampoCodigo.Location = new System.Drawing.Point(497, 36);
+            this.lblCampoCodigo.Name = "lblCampoCodigo";
+            this.lblCampoCodigo.Size = new System.Drawing.Size(70, 20);
+            this.lblCampoCodigo.TabIndex = 0;
+            this.lblCampoCodigo.Text = "Código:";
             // 
             // dgvCaracteristicas
             // 
@@ -168,6 +168,26 @@ namespace CadastrarEstacoes
             this.dgvCaracteristicas.TabIndex = 1;
             this.dgvCaracteristicas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaracteristicas_CellClick);
             // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            // 
+            // nome_estado
+            // 
+            this.nome_estado.HeaderText = "Estado Operacional";
+            this.nome_estado.Name = "nome_estado";
+            // 
+            // nome_estacao
+            // 
+            this.nome_estacao.HeaderText = "Estação";
+            this.nome_estacao.Name = "nome_estacao";
+            // 
             // cbbCaracteristica
             // 
             this.cbbCaracteristica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,27 +195,27 @@ namespace CadastrarEstacoes
             this.cbbCaracteristica.Items.AddRange(new object[] {
             "Banheiro",
             "Elevador",
-            "Terminal Interurbano de Ônibus",
-            "Terminal Urbano de Ônibus",
-            "Transferência interna gratuita",
-            "Bicicletário",
-            "Banheiro Acessível",
-            "Estação Acessível",
+            "Terminal_Interurbano_de_Onibus",
+            "Terminal_Urbano_de_Onibus",
+            "Transferencia_interna_gratuita",
+            "Bicicletario",
+            "Banheiro_Acessivel",
+            "Estacao_Acessivel",
             "Rampa",
-            "Transposição de plataformas",
-            "Escadas rolantes",
-            "Acesso elevador",
+            "Transposicao_de_plataformas",
+            "Escadas_rolantes",
+            "Acesso_elevador",
             "Lanchonete",
-            "Empório",
-            "Caixa eletrônico",
-            "Calçados",
-            "Telefone para surdos",
-            "Piso Tátil",
-            "Transferência",
-            "Acessórios",
-            "Farmácia",
-            "Rota acessível",
-            "Achados e perdidos"});
+            "Emporio",
+            "Caixa_eletronico",
+            "Calcados",
+            "Telefone_para_surdos",
+            "Piso_Tatil",
+            "Transferencia_gratuita_cptm_metro",
+            "Acessorios",
+            "Farmacia",
+            "Rota_acesssvel",
+            "Achados_e_perdidos"});
             this.cbbCaracteristica.Location = new System.Drawing.Point(257, 38);
             this.cbbCaracteristica.Name = "cbbCaracteristica";
             this.cbbCaracteristica.Size = new System.Drawing.Size(283, 28);
@@ -248,15 +268,6 @@ namespace CadastrarEstacoes
             this.gpbCaracteristicas.TabStop = false;
             this.gpbCaracteristicas.Text = "Características";
             // 
-            // lblCaracteristicas
-            // 
-            this.lblCaracteristicas.AutoSize = true;
-            this.lblCaracteristicas.Location = new System.Drawing.Point(6, 41);
-            this.lblCaracteristicas.Name = "lblCaracteristicas";
-            this.lblCaracteristicas.Size = new System.Drawing.Size(245, 20);
-            this.lblCaracteristicas.TabIndex = 6;
-            this.lblCaracteristicas.Text = "Selecione uma característica:";
-            // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
@@ -265,6 +276,15 @@ namespace CadastrarEstacoes
             this.lblEstado.Size = new System.Drawing.Size(261, 20);
             this.lblEstado.TabIndex = 7;
             this.lblEstado.Text = "Selecione o estado operacional";
+            // 
+            // lblCaracteristicas
+            // 
+            this.lblCaracteristicas.AutoSize = true;
+            this.lblCaracteristicas.Location = new System.Drawing.Point(6, 41);
+            this.lblCaracteristicas.Name = "lblCaracteristicas";
+            this.lblCaracteristicas.Size = new System.Drawing.Size(245, 20);
+            this.lblCaracteristicas.TabIndex = 6;
+            this.lblCaracteristicas.Text = "Selecione uma característica:";
             // 
             // btnAtualizar
             // 
@@ -287,26 +307,6 @@ namespace CadastrarEstacoes
             this.btnRemoveTodos.Text = "Remover todos";
             this.btnRemoveTodos.UseVisualStyleBackColor = true;
             this.btnRemoveTodos.Click += new System.EventHandler(this.btnRemoveTodos_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            // 
-            // nome_estado
-            // 
-            this.nome_estado.HeaderText = "Estado Operacional";
-            this.nome_estado.Name = "nome_estado";
-            // 
-            // nome_estacao
-            // 
-            this.nome_estacao.HeaderText = "Estação";
-            this.nome_estacao.Name = "nome_estacao";
             // 
             // btnVoltar
             // 
